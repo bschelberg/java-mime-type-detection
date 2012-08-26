@@ -1,4 +1,4 @@
 java-mime-type-detection
 ========================
 
-Mime Type Detections with Java 7
+Internet Media Type Detection with Java 7
