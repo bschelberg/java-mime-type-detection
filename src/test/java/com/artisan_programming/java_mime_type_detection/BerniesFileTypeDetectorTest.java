@@ -13,21 +13,21 @@ import org.junit.Test;
 
 public class BerniesFileTypeDetectorTest {
 
-	@Test
-	public void shouldInstallAsService() {
-		boolean found = false;
-		
-		for (FileTypeDetector fileTypeDetector : ServiceLoader.load(FileTypeDetector.class)) {
-			System.out.println(fileTypeDetector.getClass().getName());
-			
-			found = found || (fileTypeDetector instanceof BerniesFileTypeDetector);
-		}
-		
-		assertTrue(found);
-	}
-	
-	@Test
-	public void shouldUseCustomDetector() throws IOException {
-		assertEquals("text/prs.bernie", Files.probeContentType(new File("src/test/resources/custom-file.custom").toPath()));
-	}
+    @Test
+    public void shouldInstallAsService() {
+        boolean found = false;
+        
+        for (FileTypeDetector fileTypeDetector : ServiceLoader.load(FileTypeDetector.class)) {
+            System.out.println(fileTypeDetector.getClass().getName());
+            
+            found = found || (fileTypeDetector instanceof BerniesFileTypeDetector);
+        }
+        
+        assertTrue(found);
+    }
+    
+    @Test
+    public void shouldUseCustomDetector() throws IOException {
+        assertEquals("text/prs.bernie", Files.probeContentType(new File("src/test/resources/custom-file.custom").toPath()));
+    }
 }
